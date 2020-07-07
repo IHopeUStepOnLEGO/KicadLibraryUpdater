@@ -13,13 +13,13 @@ def main():
     '''
     load libraries from JSON file
     '''
-    #updater.loadLibrariesFromConfig(os.path.join(os.getcwd(), "kicadUpdater\\config\\updaterConfig2.json"))
+    updater.loadLibrariesFromConfig(os.path.join(os.getcwd(), "kicadUpdater\\config\\updaterConfig.json"))
 
     '''
     update local libraries though git
     '''
     #updater.updateByKey("modules\\packages3d")
-    #updater.updateByKey("library")
+    updater.updateByKey("library")
     #updater.updateAll()
 
 if __name__ == '__main__':

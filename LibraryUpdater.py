@@ -5,7 +5,7 @@ import sys
 import json
 
 
-from .utils.KicadUpdaterUtils import *
+from utils.KicadUpdaterUtils import *
 
 class LibraryUpdater():
     
@@ -17,7 +17,10 @@ class LibraryUpdater():
         # check if directory is specified
         if(repo_dir == ""):
             # if not, use same directory as this script
-            self.repo_dir = os.getcwd()
+            self.repo_dir = os.path.abspath(os.curdir)
+            os.chdir('..')
+            self.repo_dir = os.path.abspath(os.curdir)
+            print(self.repo_dir)
         else:
             # if specified, use given directory path
             self.repo_dir = repo_dir
@@ -27,8 +30,11 @@ class LibraryUpdater():
         if key in self.gitDict:
             self.prepareLocalFS(key, self.repo_dir)
             try:
-                git.Repo.clone_from(self.gitDict[key], os.path.join(
-                    self.repo_dir, key), branch="master", progress=Progress())
+                git.Repo.clone_from(
+                    self.gitDict[key], 
+                    os.path.join(self.repo_dir, key), 
+                    branch="master", progress=Progress()
+                )
                 #print("updating of \"%s\" successful!" % str(key))
                 print('updating of "%s" was  successful!' % str(key))
             except:

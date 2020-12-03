@@ -12,10 +12,10 @@ and redownload it from git.
 Make sure to have your own github libraries updated to not loose your data!
 
 ## How to use
-1. place the files in the same directory your kicad symbols and footprints will be located (usually "...\KiCad\share\kicad\")
-2. have a look into ".kicadUpdater\config\updaterConfig.json" to see the supported library names and git urls
-3. modify the JSON through "main.py" to fit your needs (add/remove gits from the "updaterConfig.json")
-4. load the libraries from the "updaterConfig.json"
+1. place the files inside a folder in the same directory your kicad symbols and footprints are located (usually "...\KiCad\share\kicad\")
+2. have a look into "config\updaterConfig.json" to see the supported library names and git urls (these are the default libraries)
+3. modify the JSON manually or through the `addLibraryToConfig` and `delLibraryToConfig` in main.py (add/remove gits to/from the "updaterConfig.json")
+4. load the libraries from the "updaterConfig.json" using the `loadLibrariesFromConfig` function.
 5. use the "updateByKey(libName)" method to **delete(!)** and download the files from your github link into your local dir 
 
 ## Current status

@@ -1,1 +1,1 @@
-{"libraries": {"library": "https://github.com/KiCad/kicad-symbols", "modules": "https://github.com/KiCad/kicad-footprints", "modules\\packages3d": "https://github.com/KiCad/kicad-packages3d", "templates": "https://github.com/KiCad/kicad-templates"}}
+{"libraries": {"library": "https://gitlab.com/kicad/libraries/kicad-symbols", "modules": "https://gitlab.com/kicad/libraries/kicad-footprints", "modules\\packages3d": "https://gitlab.com/kicad/libraries/kicad-packages3D", "templates": "https://gitlab.com/kicad/libraries/kicad-templates"}}
